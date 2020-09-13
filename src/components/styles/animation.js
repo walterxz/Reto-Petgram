@@ -1,7 +1,7 @@
-import styled, { css, keyframes } from "styled-components";
+import styled, { css, keyframes } from 'styled-components';
 
 // regresa css
-export const fadeIn = ({ time = "1s", type = "ease" } = {}) =>
+export const fadeIn = ({ time = '1s', type = 'ease' } = {}) =>
   css`
     animation: ${time} ${fadeInKeyframes} ${type};
   `;

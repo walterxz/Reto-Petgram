@@ -1,9 +1,9 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Anchor = styled.a`
   display: flex;
   flex-direction: column;
-  flex-align: center;
+  text-align: center;
   text-decoration: none;
   width: 75px;
 `;
