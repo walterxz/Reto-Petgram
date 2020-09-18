@@ -7,4 +7,7 @@ export const Button = styled.button`
   & svg {
     margin-right: 4px;
   }
-`;
+  background-color: transparent;
+  border: 0px;
+  color:red;
+  `
