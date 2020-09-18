@@ -1,15 +1,32 @@
 import React from 'react';
-import { ListOfCategories } from './components/ListOfCategories';
-import { ListOfPhotoCard } from './components/ListOfPhotoCard';
+
 import { Logo } from './components/Logo';
 
 import { GlobalStyle } from './components/styles/GlobalStyle';
+import { PhotoCardWithQuery } from './container/PhotoCardWithQuery';
 
-export const App = () => (
-  <div>
-    <GlobalStyle />
-    <Logo />
-    <ListOfCategories />
-    <ListOfPhotoCard />
-  </div>
-);
+import { Home } from './pages/Home';
+import { Router } from '@reach/router';
+
+export const App = () => {
+  const urlParams = new window.URLSearchParams(window.location.search);
+
+  const detailId = urlParams.get('detail');
+
+  return (
+    <div>
+      <GlobalStyle />
+      <Logo />
+      {detailId ? (
+        <PhotoCardWithQuery id={detailId} />
+      ) : (
+        <>
+          <Router>
+            <Home path="/" />
+            <Home path="/pet/:categoryId" />
+          </Router>
+        </>
+      )}
+    </div>
+  );
+};
